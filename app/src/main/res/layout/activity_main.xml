@@ -46,6 +46,18 @@
                 android:textIsSelectable="true"
                 />
 
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:text="Ans"
+                android:id="@+id/buttonAns"
+                android:textColor="@color/operation_color"
+                android:visibility="invisible"
+                />
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

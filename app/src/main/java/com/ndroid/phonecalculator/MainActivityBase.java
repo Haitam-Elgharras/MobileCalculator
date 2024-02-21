@@ -13,9 +13,10 @@ import android.widget.TextView;
 public abstract class MainActivityBase extends AppCompatActivity {
     EditText inputEditText;
     TextView buttonResult;
+    String lastResult = "";
 
     protected Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, button00;
-    protected Button buttonMultiply, buttonDivide, buttonAdd, buttonSubtract, buttonDot, buttonC, buttonEquals, buttonDEL, buttonPower, buttonMod;
+    protected Button buttonMultiply, buttonDivide, buttonAdd, buttonSubtract, buttonDot, buttonC, buttonEquals, buttonDEL, buttonPower, buttonMod, buttonAns;
 
 
 
@@ -73,6 +74,7 @@ public abstract class MainActivityBase extends AppCompatActivity {
         buttonDEL = findViewById(R.id.buttonDEL);
         buttonPower = findViewById(R.id.buttonPower);
         buttonMod = findViewById(R.id.buttonMod);
+        buttonAns = findViewById(R.id.buttonAns);
 
         // Set the onClickListener for each button
         button0.setOnClickListener(v -> appendNumber("0"));
@@ -100,6 +102,9 @@ public abstract class MainActivityBase extends AppCompatActivity {
         buttonAdd.setOnClickListener(v -> appendOperator('+'));
         buttonSubtract.setOnClickListener(v -> appendOperator('-'));
         buttonMod.setOnClickListener(v -> appendOperator('%'));
+        buttonAns.setOnClickListener(v -> {
+            inputEditText.setText(lastResult);
+        });
 
         buttonDot.setOnClickListener(v -> {
             String existingText = inputEditText.getText().toString();
@@ -114,6 +119,7 @@ public abstract class MainActivityBase extends AppCompatActivity {
         });
         buttonC.setOnClickListener(v -> {
             inputEditText.setText("");
+            buttonResult.setText("");
         });
 
         buttonPower.setOnClickListener(v -> {
@@ -137,6 +143,7 @@ public abstract class MainActivityBase extends AppCompatActivity {
                 // to fix the result to 4 decimal places using toFixed
                 result = Double.parseDouble(String.format("%.4f", result));
                 this.buttonResult.setText(String.valueOf(result));
+                lastResult = String.valueOf(result);
             } catch (IllegalArgumentException e) {
                 this.buttonResult.setText("Error");
             }
