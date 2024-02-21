@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#f0eef0</color> <!-- Gray -->
+    <color name="light_gray">#ffffff</color> <!-- Light Gray -->
+    <color name="operation_color">#6750a4</color> <!-- Teal 500 -->
+    <color name="secondary">#FF5722</color> <!-- Orange A700 -->
+    <color name="light">#f0eef0</color> <!-- Deep Purple 100 -->
+    <color name="blue">#345b82</color>
+</resources>
